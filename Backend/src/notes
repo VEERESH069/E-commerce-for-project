@@ -1,0 +1,19 @@
+git pull origin main
+
+cd to Backend
+
+create index.js in Backend
+create .env file in Config
+node --watch index.js
+
+
+create a project in mongoDB
+and paste the url and password
+
+create db.js in Database
+connect the mongoose.db url to index.js
+
+create errorHandler.js in Utils 
+write errorHandler code
+
+create error.js in Middleware
