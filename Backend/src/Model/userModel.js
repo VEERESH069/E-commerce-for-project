@@ -13,7 +13,6 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Please enter your password"],
         minLength: [4, "Password should be greater than 4 characters"],
-        
       },
     //   phoneNumber:{
     //     type: Number,
@@ -64,4 +63,4 @@ const userSchema = new Schema({
 
 const userModel = model('User', userSchema);
 
-module.exports = userModel;
+model.exports = userModel;
