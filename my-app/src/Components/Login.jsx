@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
+import './login.css'
 
 export const Login = () => {
     const [email, setEmail] = useState('')
