@@ -63,4 +63,8 @@ userrouter.post("/login", async(req,res)=>{
 
 });
 
+userrouter.post('/add-address',auth,
+
+)
+
 module.exports = userrouter;
