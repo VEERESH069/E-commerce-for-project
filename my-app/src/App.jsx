@@ -1,15 +1,25 @@
-import { Route, Routes } from 'react-router-dom'
-import { Login } from './Components/Login'
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { Login } from './Components/Login';
+import { Signup } from './Components/Signup';
+import { Home } from './page/home';
+import { ProductForm } from './Components/ProductForm';
+import Navbar from '../src/Components/Navabar';
+import { Productcard } from './Components/Productcard';
 
 function App() {
-
   return (
     <>
-    <Routes>
-      <Route path="/login" element={<Login/>} />
-    </Routes>
+    <Navbar/>
+      <Routes>
+        <Route path="/Login" element={<Login />} ></Route>
+        <Route path="/Signup" element={<Signup />} ></Route>
+        <Route path="/home" element={<Home />} ></Route>
+        <Route path='/productform' element={<ProductForm/>}/>
+        <Route path ='/productCard' element={<Productcard/>}/>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

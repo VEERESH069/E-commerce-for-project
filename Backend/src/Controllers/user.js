@@ -63,8 +63,19 @@ userrouter.post("/login", async(req,res)=>{
 
 });
 
-userrouter.post('/add-address',auth,
+userrouter.post('/add-address',auth,async(req,res) =>{
+  const {email} = req.body
+  try{
+    const user = await userModel.findOne({email:email})
+    if(!user){
+      return res.status(400).json({message:"User not found"})
+    }
+    res.status(200).json({message:"Successfully Received",user:user.addressess})
+  }
+catch (err){
+  console.log("error in get address",res);
+}
 
-)
+})
 
 module.exports = userrouter;

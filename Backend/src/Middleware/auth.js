@@ -13,6 +13,8 @@ const auth = async(req,res,next)=>{
             console.log("err in auth middleware",err)
         }
         else{
+            const finduser = decoded.email;
+            
             next()
         }
     })
