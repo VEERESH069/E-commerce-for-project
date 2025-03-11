@@ -12,6 +12,7 @@ const url=process.env.db_url;
 app.get('/',(req,res)=>{
     res.send('Hello World');
 })
+app.use('/orders', orderRoutes);
 
 
 app.listen(PORT,async()=>{

@@ -77,5 +77,15 @@ catch (err){
 }
 
 })
+const express = require('express');
+const { createOrder } = require('../Controllers/orderController');
+
+const router = express.Router();
+
+// Route to create a new order
+router.post('/create-order', createOrder);
+
+module.exports = router;
+
 
 module.exports = userrouter;
