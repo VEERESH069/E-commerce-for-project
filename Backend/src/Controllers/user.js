@@ -84,8 +84,16 @@ const router = express.Router();
 
 // Route to create a new order
 router.post('/create-order', createOrder);
+router.get('/order',async(res,req)=>{
+  const{email} = req.user   
+  if(!email){
+      return res.status(400).json({message:"Invalid Email"});
 
-module.exports = router;
+  }
+const orderHistory =await orderModel.findOne({email})
+
+console.log(orderHistory);
+})
 
 
 module.exports = userrouter;
