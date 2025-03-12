@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Productform() {
 const [name, setName] = useState('');
@@ -37,7 +38,7 @@ const handlesubmit = async (e) => {
     })
 
     console.log(formData)
-    const res = await axios.post('http://localhost:5000/product', formData, {headers: {'content-type': 'multipart/form-data'}})
+    const res = await axios.post('http://localhost:3000/product/post-product', formData, {headers: {'content-type': 'multipart/form-data'}})
 
     if (res.status === 200) {
         setEmail('')
