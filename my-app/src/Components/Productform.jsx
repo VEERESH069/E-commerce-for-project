@@ -4,14 +4,14 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const ProductForm = () => {
-    const { id } = useParams();
-    const navigate = useNavigate();
+   const { id } = useParams();
+   const navigate=useNavigate()
     const isEdit = Boolean(id);
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
-    const [stock, setStock] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [stock, setStock] = useState("");
   const [tag, setTag] = useState("");
   const [email, setEmail] = useState("");
 

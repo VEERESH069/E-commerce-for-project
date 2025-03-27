@@ -1,16 +1,44 @@
+// import React from 'react'
+// import axios from 'axios'
+// import { FaMinus, FaPlus } from 'react-icons/fa'
+
+//  const Singleproduct = () => {
+//   return (
+//     <div></div>
+//   )
+// }
+// export default Singleproduct;
+
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6";
 import { useParams } from 'react-router-dom';
 
-const Singleproductpage = () => {
+const Singleproduct = () => {
 
     const {product,setproduct}=useState({})
     const {loading,setLoading}=useState(true)
     const {error,setError}=useState(false)
     const {quantity,setquantity}=useState(0)
     const {id}=useParams()
+
+    const addcart = async(email, productId, quantity, productName) => {
+        try{
+           const response= await axios.post('http://localhost:3000/cart',
+                {
+                    email:email, 
+                    productId :productId,
+                    quantity:quantity,
+                    productName:productName
+                    }
+
+            )
+    }
+    catch(err){
+        console.log(err)
+    }
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -151,12 +179,12 @@ const Singleproductpage = () => {
                                 </div>
                             </div>
                             <div className="flex flex-wrap gap-x-5 my-3">
-                                <button className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear">
+                                <button onClick={addcart}className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear">
                                     Add to Cart
                                 </button>
                             </div>
 </div>
   )
-}
+}}
 
-export default Singleproductpage
+export default Singleproduct

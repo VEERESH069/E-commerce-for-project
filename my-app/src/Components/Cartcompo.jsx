@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoIosAddCircleOutline  } from "react-icons/io";
 import {  MdOutlineRemoveCircleOutline } from "react-icons/io";
+import { Navigate } from "react-router-dom";
 export default function CartProduct({ _id, email, images, quantity, price }) {
 
 
@@ -15,7 +16,7 @@ export default function CartProduct({ _id, email, images, quantity, price }) {
     }, [images]);
 
 
-
+    const navigate = Navigate();
 
     const handleIncrement = () => {
         const newquantityVal = quantityVal + 1;
@@ -53,7 +54,7 @@ export default function CartProduct({ _id, email, images, quantity, price }) {
             });
     };
     const currentImage = images && images.length > 0 ? images[currentIndex] : null;
-    return (
+return (
         <div className="h-max w-full p-4 flex justify-between border-b border-neutral-300 bg-neutral-100 rounded-lg">
             <div className="flex flex-col gap-y-2">
                 <img
@@ -100,6 +101,7 @@ export default function CartProduct({ _id, email, images, quantity, price }) {
                     </div>
                 </div>
             </div>
+            <button onClick={()=> navigate('/address')}>place order</button>
             
         </div>
     );

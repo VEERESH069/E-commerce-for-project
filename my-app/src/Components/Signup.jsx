@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
-// import { RxAvatar } from 'react-avatar'
+import { IoPersonCircleSharp } from "react-icons/io5";
 import { useState } from 'react'
 import axios from 'axios'
-import { IoMdPerson } from "react-icons/io";
-
-
 
 export const Signup = () => {
     const [name, setName] = useState('')
@@ -137,7 +134,7 @@ export const Signup = () => {
                 htmlFor="avatar"
                 className="block text-sm font-medium text-gray-700"
               ></label>
-               <div className="mt-2 flex items-center">
+              <div className="mt-2 flex items-center">
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
                   {avatar ? (
                     <img
@@ -146,10 +143,9 @@ export const Signup = () => {
                       className="h-full w-full object-cover rounded-full"
                     />
                   ) : (
-
-                    <IoMdPerson className="h-8 w-8" />
+                    <IoPersonCircleSharp className='h-8 w-8' />
                   )}
-                </span> 
+                </span>
                 <label
                   htmlFor="file-input"
                   className="ml-5 flex items-center justify-center px-4 py-2 border border-gray-300
@@ -166,7 +162,7 @@ export const Signup = () => {
                   />
                 </label>
               </div>
-             </div>
+            </div>
 
             <div>
               <button

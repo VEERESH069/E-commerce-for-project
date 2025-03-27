@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
-import './login.css'
 
+import { useDispatch } from 'react-redux'
+import { loginuser } from '../Redux/action'
 export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [visible, setVisible] = useState(false)
 
+ const dispatch=useDispatch()
+
+  const handleclick=()=>{
+    dispatch(loginuser({email,password}))
+  }
   return (
     <div>
         <div className="flex justify-center items-center h-screen bg-gray-200">
@@ -58,7 +64,7 @@ export const Login = () => {
                 </div>
                 </div>
               </div>
-            <button className="w-full bg-purple-500 text-white p-3 rounded hover:bg-purple-600">Login</button>
+            <button className="w-full bg-purple-500 text-white p-3 rounded hover:bg-purple-600" onClick={handleclick}>Login</button>
 
             <div className='newUser'>
               <p>Not a user? <a href="">Create an account</a></p>
