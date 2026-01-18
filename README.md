@@ -1,4 +1,4 @@
-## PHYTECH — Scalable Full-Stack E-Commerce Platform
+## PHYTECH  Scalable Full-Stack E-Commerce Platform
 
 PHYTECH is a production-ready, full-stack e-commerce platform designed with scalability, security, and clean architecture at its core. The project focuses on building real-world backend systems backed by a modern frontend, following product-company engineering standards.
 
